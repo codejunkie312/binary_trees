@@ -1,4 +1,5 @@
 #include "binary_trees.h"
+#include <string.h>
 
 /* Original code from http://stackoverflow.com/a/13755911/5184480 */
 
