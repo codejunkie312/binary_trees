@@ -83,5 +83,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 /* 102-binary_tree_is_complete.c */
 int binary_tree_is_complete(const binary_tree_t *tree);
+/* 103-binary_tree_rotate_left.c */
+binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 
 #endif /* BINARY_TREES_H */
