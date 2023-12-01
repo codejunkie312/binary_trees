@@ -65,28 +65,32 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 
 	if (tree == NULL)
 		return (0);
-	
+
 	queue = NULL;
 	enqueue_102(&queue, (void *)tree);
 
 	while (queue != NULL)
-    {
-        node = dequeue_102(&queue);
+	{
+		node = dequeue_102(&queue);
 
-        if (node->left == NULL)
-            flag = 1;
-        else if (flag == 1)
-            return (0);
-        else
-            enqueue_102(&queue, node->left);
+		if (node->left)
+		{
+			if (flag == 1)
+				return (0);
+			enqueue_102(&queue, (void *)node->left);
+		}
+		else
+			flag = 1;
 
-        if (node->right == NULL)
-            flag = 1;
-        else if (flag == 1)
-            return (0);
-        else
-            enqueue_102(&queue, node->right);
-    }
+		if (node->right)
+		{
+			if (flag == 1)
+				return (0);
+			enqueue_102(&queue, (void *)node->right);
+		}
+		else
+			flag = 1;
+	}
 
-    return (1);
+	return (1);
 }
