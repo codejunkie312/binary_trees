@@ -7,7 +7,7 @@
  * Return: 1 if node is a root, otherwise 0
  * If node is NULL, return 0
  */
-int binary_tree_is_root(const binary_tree_t *node)
+int binary_tree_is_root_local(const binary_tree_t *node)
 {
 	if (node == NULL)
 		return (0);
@@ -32,7 +32,7 @@ size_t binary_tree_depth(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 
-	if (binary_tree_is_root(tree))
+	if (binary_tree_is_root_local(tree))
 		return (0);
 
 	depth = binary_tree_depth(tree->parent);
