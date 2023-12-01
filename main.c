@@ -40,16 +40,13 @@ int main(void)
     root = binary_tree_node(NULL, 98);
     root->left = binary_tree_node(root, 12);
     root->right = binary_tree_node(root, 402);
-    root->left->right = binary_tree_node(root->left, 54);
-    root->right->right = binary_tree_node(root->right, 128);
-    root->left->left = binary_tree_node(root->left, 10);
-    root->right->left = binary_tree_node(root->right, 45);
-    root->right->right->left = binary_tree_node(root->right->right, 92);
-    root->right->right->right = binary_tree_node(root->right->right, 65);
-    binary_tree_print(root);
+    root->left->left = binary_tree_node(root->left, 6);
+    root->left->right = binary_tree_node(root->left, 56);
+    root->right->left = binary_tree_node(root->right, 256);
+    root->right->right = binary_tree_node(root->right, 512);
 
-    launch_test(NULL, NULL);
-    launch_test(root->right->left, root->right->right->right);
-    launch_test(root->right->right, root->right->right->right);
+    binary_tree_print(root);
+    binary_tree_levelorder(root, &print_num);
+    binary_tree_delete(root);
     return (0);
 }
