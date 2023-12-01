@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -Wall -Werror -Wextra -pedantic -std=c89 -Wno-format *.c -o output
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o output
