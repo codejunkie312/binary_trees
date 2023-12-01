@@ -35,28 +35,16 @@ void launch_test(binary_tree_t *n1, binary_tree_t *n2)
  */
 int main(void)
 {
-    bst_t *root;
-    bst_t *node;
+    bst_t *tree;
+    int array[] = {
+        79, 47, 68, 87, 84, 91, 21, 32, 34, 2,
+        20, 22, 98, 1, 62, 95
+    };
+    size_t n = sizeof(array) / sizeof(array[0]);
 
-    root = NULL;
-    node = bst_insert(&root, 98);
-    printf("Inserted: %d\n", node->n);
-    node = bst_insert(&root, 402);
-    printf("Inserted: %d\n", node->n);
-    node = bst_insert(&root, 12);
-    printf("Inserted: %d\n", node->n);
-    node = bst_insert(&root, 46);
-    printf("Inserted: %d\n", node->n);
-    node = bst_insert(&root, 128);
-    printf("Inserted: %d\n", node->n);
-    node = bst_insert(&root, 256);
-    printf("Inserted: %d\n", node->n);
-    node = bst_insert(&root, 512);
-    printf("Inserted: %d\n", node->n);
-    node = bst_insert(&root, 1);
-    printf("Inserted: %d\n", node->n);
-    node = bst_insert(&root, 128);
-    printf("Node should be nil -> %p\n", (void *)node);
-    binary_tree_print(root);
+    tree = array_to_bst(array, n);
+    if (!tree)
+        return (1);
+    binary_tree_print(tree);
     return (0);
 }
