@@ -97,5 +97,7 @@ bst_t *array_to_bst(int *array, size_t size);
 bst_t *bst_search(const bst_t *tree, int value);
 /* 114-bst_remove.c */
 bst_t *bst_remove(bst_t *root, int value);
+/* 120-binary_tree_is_avl.c */
+int binary_tree_is_avl(const binary_tree_t *tree);
 
 #endif /* BINARY_TREES_H */
