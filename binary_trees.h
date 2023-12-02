@@ -105,5 +105,8 @@ avl_t *avl_insert(avl_t **tree, int value);
 avl_t *array_to_avl(int *array, size_t size);
 /* 123-avl_remove.c */
 avl_t *avl_remove(avl_t *root, int value);
+/* 124-sorted_array_to_avl.c */
+avl_t *sorted_array_to_avl(int *array, size_t size);
+
 
 #endif /* BINARY_TREES_H */
