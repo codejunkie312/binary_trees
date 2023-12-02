@@ -1,9 +1,5 @@
 #include "binary_trees.h"
 
-binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
-binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
-int binary_tree_balance(const binary_tree_t *tree);
-
 /**
  * avl_insert_recursive - inserts a value in an AVL Tree
  * @tree: double pointer to the root node of the AVL
