@@ -53,31 +53,33 @@ binary_tree_t *basic_tree(void)
  */
 int main(void)
 {
-    binary_tree_t *root;
-    int avl;
+    avl_t *root;
+    avl_t *node;
 
-    root = basic_tree();
-
+    root = NULL;
+    node = avl_insert(&root, 98);
+    printf("Inserted: %d\n", node->n);
     binary_tree_print(root);
-    avl = binary_tree_is_avl(root);
-    printf("Is %d avl: %d\n", root->n, avl);
-    avl = binary_tree_is_avl(root->left);
-    printf("Is %d avl: %d\n", root->left->n, avl);
-
-    root->right->left = binary_tree_node(root->right, 97);
+    node = avl_insert(&root, 402);
+    printf("\nInserted: %d\n", node->n);
     binary_tree_print(root);
-    avl = binary_tree_is_avl(root);
-    printf("Is %d avl: %d\n", root->n, avl);
-
-    root = basic_tree();
-    root->right->right->right = binary_tree_node(root->right->right, 430);
+    node = avl_insert(&root, 12);
+    printf("\nInserted: %d\n", node->n);
     binary_tree_print(root);
-    avl = binary_tree_is_avl(root);
-    printf("Is %d avl: %d\n", root->n, avl);
-
-    root->right->right->right->left = binary_tree_node(root->right->right->right, 420);
+    node = avl_insert(&root, 46);
+    printf("\nInserted: %d\n", node->n);
     binary_tree_print(root);
-    avl = binary_tree_is_avl(root);
-    printf("Is %d avl: %d\n", root->n, avl);
+    node = avl_insert(&root, 128);
+    printf("\nInserted: %d\n", node->n);
+    binary_tree_print(root);
+    node = avl_insert(&root, 256);
+    printf("\nInserted: %d\n", node->n);
+    binary_tree_print(root);
+    node = avl_insert(&root, 512);
+    printf("\nInserted: %d\n", node->n);
+    binary_tree_print(root);
+    node = avl_insert(&root, 50);
+    printf("\nInserted: %d\n", node->n);
+    binary_tree_print(root);
     return (0);
 }
