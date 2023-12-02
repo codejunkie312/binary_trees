@@ -115,5 +115,7 @@ heap_t *heap_insert(heap_t **root, int value);
 heap_t *array_to_heap(int *array, size_t size);
 /* 133-heap_extract.c */
 int heap_extract(heap_t **root);
+/* 134-heap_to_sorted_array.c */
+int *heap_to_sorted_array(heap_t *heap, size_t *size);
 
 #endif /* BINARY_TREES_H */
