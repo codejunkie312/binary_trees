@@ -67,26 +67,33 @@ void print_array(const int *array, size_t size)
  */
 int main(void)
 {
-    binary_tree_t *root;
-    int heap;
+    heap_t *root;
+    heap_t *node;
 
-    root = basic_tree();
-
+    root = NULL;
+    node = heap_insert(&root, 98);
+    printf("Inserted: %d\n", node->n);
     binary_tree_print(root);
-    heap = binary_tree_is_heap(root);
-    printf("Is %d heap: %d\n", root->n, heap);
-    heap = binary_tree_is_heap(root->left);
-    printf("Is %d heap: %d\n", root->left->n, heap);
-
-    root->right->left = binary_tree_node(root->right, 97);
+    node = heap_insert(&root, 402);
+    printf("\nInserted: %d\n", node->n);
     binary_tree_print(root);
-    heap = binary_tree_is_heap(root);
-    printf("Is %d heap: %d\n", root->n, heap);
-
-    root = basic_tree();
-    root->right->right = binary_tree_node(root->right, 79);
+    node = heap_insert(&root, 12);
+    printf("\nInserted: %d\n", node->n);
     binary_tree_print(root);
-    heap = binary_tree_is_heap(root);
-    printf("Is %d heap: %d\n", root->n, heap);
+    node = heap_insert(&root, 46);
+    printf("\nInserted: %d\n", node->n);
+    binary_tree_print(root);
+    node = heap_insert(&root, 128);
+    printf("\nInserted: %d\n", node->n);
+    binary_tree_print(root);
+    node = heap_insert(&root, 256);
+    printf("\nInserted: %d\n", node->n);
+    binary_tree_print(root);
+    node = heap_insert(&root, 512);
+    printf("\nInserted: %d\n", node->n);
+    binary_tree_print(root);
+    node = heap_insert(&root, 50);
+    printf("\nInserted: %d\n", node->n);
+    binary_tree_print(root);
     return (0);
 }
